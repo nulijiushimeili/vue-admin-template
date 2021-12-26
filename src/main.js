@@ -28,6 +28,13 @@ if (process.env.NODE_ENV === 'production') {
   mockXHR()
 }
 
+// 导入网络请求处理库
+import axios from "axios";
+// 配置请求的根路径
+axios.defaults.baseURL = "http://127.0.0.1:8888/"
+Vue.prototype.$http = axios;
+
+
 // set ElementUI lang to EN
 Vue.use(ElementUI, { locale })
 // 如果想要中文版 element-ui，按如下方式声明

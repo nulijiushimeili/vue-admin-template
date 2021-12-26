@@ -51,28 +51,29 @@ export const constantRoutes = [
       path: 'dashboard',
       name: 'Dashboard',
       component: () => import('@/views/dashboard/index'),
-      meta: { title: 'Dashboard', icon: 'dashboard' }
+      meta: { title: '弯腰捡钱', icon: 'dashboard' }
     }]
   },
 
   {
-    path: '/example',
+    path: '/convertible_bond',
+    alwaysShow: true,
     component: Layout,
-    redirect: '/example/table',
-    name: 'Example',
-    meta: { title: 'Example', icon: 'el-icon-s-help' },
+    redirect: '/convertible_bond/convertible_bond_data_all',
+    name: 'convertible_bond',
+    meta: { title: '可转债', icon: 'el-icon-s-help' },
     children: [
       {
-        path: 'table',
-        name: 'Table',
-        component: () => import('@/views/table/index'),
-        meta: { title: 'Table', icon: 'table' }
+        path: 'convertible_bond_data_all',
+        name: '可转债全部数据',
+        component: () => import('@/views/convertible_bond/convertible_bond_data_all'),
+        meta: { title: '可转债全部数据', icon: 'table' }
       },
       {
-        path: 'tree',
-        name: 'Tree',
-        component: () => import('@/views/tree/index'),
-        meta: { title: 'Tree', icon: 'tree' }
+        path: 'convertible_bond_double_low_strategy',
+        name: '可转债双低策略',
+        component: () => import('@/views/convertible_bond/convertible_bond_double_low_strategy.vue'),
+        meta: { title: '可转债双低策略', icon: 'table' }
       }
     ]
   },
